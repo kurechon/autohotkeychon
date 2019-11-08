@@ -5,13 +5,15 @@
 ; Windows
 ^+4:: Send, #+s ; Screenshot
 !Space:: Send, #s ; Spotlight
-
+^$SC029:: Send, #e ; Exploler
 
 ; Google Chrome
 #IF WinActive("ahk_exe chrome.exe")
   ^!u:: Send, ^u
   ^!j:: Send, ^+j
   ^!c:: Send, ^+c
+  +^Enter:: Send, !{Enter}
+  ^Enter:: Send, !{Enter}
 ;
 
 
