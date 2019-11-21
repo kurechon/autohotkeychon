@@ -1,5 +1,5 @@
 #Include lib/IME.ahk
-#Include lib/alt-ime-ahk.ahk
+#Include alt-ime-ahk-custom.ahk
 
 
 ; Windows
@@ -21,6 +21,7 @@
 #IF WinActive("ahk_exe figma.exe")
 
 ;
+
 
 
 ; https://sites.google.com/site/autohotkeyjp/reference/KeyList

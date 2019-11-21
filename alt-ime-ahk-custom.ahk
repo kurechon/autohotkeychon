@@ -7,8 +7,6 @@
 ; Author:     karakaram   http://www.karakaram.com/alt-ime-on-off
 
 
-; Razer Synapseなど、キーカスタマイズ系のツールを併用しているときのエラー対策
-#MaxHotkeysPerInterval 350
 
 ; 主要なキーを HotKey に設定し、何もせずパススルーする
 *~a::
@@ -108,8 +106,22 @@
     Return
 
 ; 上部メニューがアクティブになるのを抑制
-*~LCtrl::Send {Blind}{vk07}
-*~RCtrl::Send {Blind}{vk07}
+; fixed for AdobeCC by @kurechon
+*~LCtrl::
+  if (WinActive("ahk_class illustrator") || WinActive("ahk_class photoshop")) {
+
+  } else {
+    Send {Blind}{vk07}
+  }
+  Return
+*~RCtrl::
+  if (WinActive("ahk_class illustrator") || WinActive("ahk_class photoshop")) {
+
+  } else {
+    Send {Blind}{vk07}
+  }
+  Return
+
 
 ; 左 Ctrl 空打ちで IME を OFF
 LCtrl up::
