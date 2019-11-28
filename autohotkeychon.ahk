@@ -3,9 +3,10 @@
 
 
 ; Windows
-^+4:: Send, #+s ; Screenshot
+^+4:: Send, gi#+s ; Screenshot
 !Space:: Send, #s ; Spotlight
 ^$SC029:: Send, #e ; Exploler
+F12:: Send, #!g ; Capture 15s
 
 ; Google Chrome
 #IF WinActive("ahk_exe chrome.exe")
@@ -19,6 +20,14 @@
 
 ; Figma
 #IF WinActive("ahk_exe figma.exe")
+  ^1::^0
+  Tab::^\
+  ^r:: Send, +r
+  ^h:: Send, +r
+;
+
+; Illustrator
+#IF WinActive("ahk_exe illustrator.exe")
 
 ;
 
