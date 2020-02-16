@@ -49,8 +49,8 @@ F12:: Send, #!g ; Capture 15s
 
 ; Slack
 #IF WinActive("ahk_exe slack.exe")
-  ^]:: Send, !{Up}
-  ^[:: Send, !{Down}
+  ^]:: Send, !{Right}
+  ^[:: Send, !{Left}
 ;
 
 
