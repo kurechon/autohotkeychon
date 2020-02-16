@@ -1,12 +1,27 @@
 #Include lib/IME.ahk
 #Include alt-ime-ahk-custom.ahk
 
+SetTitleMatchMode, 2    ; 「2」＝部分一致、「RegEx」＝正規表現
+
+WinActivateRun(winTitle, exeFullPath := "")
+{
+    if (WinExist(winTitle)) {
+        WinActivate
+    } else if (exeFullPath) {
+        SoundPlay, *-1
+        Run, %exeFullPath%
+    }
+    return
+}
+
 
 ; Windows
 ^+4:: Send, gi#+s ; Screenshot
 !Space:: Send, #s ; Spotlight
-^$SC029:: Send, #e ; Exploler
+^+$SC029:: Send, #e ; Exploler
+^$SC029:: WinActivateRun("ahk_class CabinetWClass", "C:\Windows\explorer.exe")
 F12:: Send, #!g ; Capture 15s
+#C::  Send, ^C
 
 ; Google Chrome
 #IF WinActive("ahk_exe chrome.exe")
@@ -15,6 +30,7 @@ F12:: Send, #!g ; Capture 15s
   ^!c:: Send, ^+c
   +^Enter:: Send, !{Enter}
   ^Enter:: Send, !{Enter}
+  +Enter:: Send, !{Enter}
 ;
 
 
@@ -29,6 +45,12 @@ F12:: Send, #!g ; Capture 15s
 ; Illustrator
 #IF WinActive("ahk_exe illustrator.exe")
 
+;
+
+; Slack
+#IF WinActive("ahk_exe slack.exe")
+  ^]:: Send, !{Up}
+  ^[:: Send, !{Down}
 ;
 
 
