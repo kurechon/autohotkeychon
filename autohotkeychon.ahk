@@ -16,7 +16,7 @@ WinActivateRun(winTitle, exeFullPath := "")
 
 
 ; Windows
-^+4:: Send, #+s ; Screenshot
+^+4:: Send, gi#+s ; Screenshot
 !Space:: Send, #s ; Spotlight
 ^+$SC029:: Send, #e ; Exploler
 ^$SC029:: WinActivateRun("ahk_class CabinetWClass", "C:\Windows\explorer.exe")
@@ -53,6 +53,8 @@ F12:: Send, #!g ; Capture 15s
   ^Down:: Send, ^{End}
   ^Left:: Send, {Home}
   ^Right:: Send, {End}
+
+  ^+p:: Send, !+p
 ;
 
 
