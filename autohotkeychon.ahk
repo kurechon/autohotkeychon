@@ -16,7 +16,7 @@ WinActivateRun(winTitle, exeFullPath := "")
 
 
 ; Windows
-^+4:: Send, gi#+s ; Screenshot
+^+4:: Send, #+s ; Screenshot
 !Space:: Send, #s ; Spotlight
 ^+$SC029:: Send, #e ; Exploler
 ^$SC029:: WinActivateRun("ahk_class CabinetWClass", "C:\Windows\explorer.exe")
@@ -33,7 +33,6 @@ F12:: Send, #!g ; Capture 15s
   +Enter:: Send, !{Enter}
 ;
 
-
 ; Figma
 #IF WinActive("ahk_exe figma.exe")
   ^1::^0
@@ -42,17 +41,19 @@ F12:: Send, #!g ; Capture 15s
   ^h:: Send, +r
 ;
 
-; Illustrator
-#IF WinActive("ahk_exe illustrator.exe")
-
-;
-
 ; Slack
 #IF WinActive("ahk_exe slack.exe")
   ^]:: Send, !{Right}
   ^[:: Send, !{Left}
 ;
 
+; Atom
+#IF WinActive("ahk_exe atom.exe")
+  ^Up:: Send, ^{Home}
+  ^Down:: Send, ^{End}
+  ^Left:: Send, {Home}
+  ^Right:: Send, {End}
+;
 
 
 ; https://sites.google.com/site/autohotkeyjp/reference/KeyList
