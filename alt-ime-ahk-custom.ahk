@@ -111,14 +111,14 @@
   if (WinActive("ahk_class illustrator") || WinActive("ahk_class photoshop")) {
 
   } else {
-    Send {Blind}{vk07}
+    Send {Blind}
   }
   Return
 *~RCtrl::
   if (WinActive("ahk_class illustrator") || WinActive("ahk_class photoshop")) {
 
   } else {
-    Send {Blind}{vk07}
+    Send {Blind}
   }
   Return
 
