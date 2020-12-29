@@ -31,6 +31,10 @@ F12:: Send, #!g ; Capture 15s
   +^Enter:: Send, !{Enter}
   ^Enter:: Send, !{Enter}
   +Enter:: Send, !{Enter}
+  +^NumpadEnter:: Send, !{Enter}
+  ^NumpadEnter:: Send, !{Enter}
+  +NumpadEnter:: Send, !{Enter}
+  
 ;
 
 ; Figma
@@ -47,15 +51,21 @@ F12:: Send, #!g ; Capture 15s
   ^[:: Send, !{Left}
 ;
 
-; Atom
-#IF WinActive("ahk_exe atom.exe")
+; around Texting
+#IF (!WinActive("ahk_class illustrator") || !WinActive("ahk_class photoshop"))
   ^Up:: Send, ^{Home}
   ^Down:: Send, ^{End}
   ^Left:: Send, {Home}
   ^Right:: Send, {End}
 
+  ^+Up:: Send, ^+{Home}
+  ^+Down:: Send, ^+{End}
+  ^+Left:: Send, +{Home}
+  ^+Right:: Send, +{End}
+
   ^+p:: Send, !+p
 ;
+
 
 
 ; https://sites.google.com/site/autohotkeyjp/reference/KeyList
